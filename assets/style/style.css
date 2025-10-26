@@ -2,17 +2,17 @@
     /*Light Mode Colors */
     --base-variant: #eff8fe;
     --text-color: #1a1a1a;
-    --navbar-bg: #5ab7e2;           /* Navbar */
-    --toggle-icon-fill: #000000;    /* White toggle icon */
+    --navbar-bg: #5ab7e2;          /* Navbar */
+    --toggle-icon-fill: #000000;   /* White toggle icon */
     --container-bg: #cbe8f5;
 }
 
 body.darkmode {
     /*Dark Mode Colors */
-    --base-variant: #29344e;        /* Body Background */
+    --base-variant: #29344e;       /* Body Background */
     --text-color: #E0E0E0;
-    --navbar-bg: #344876;           /* Navbar Background */
-    --toggle-icon-fill: #ffffff;    /* Toggle Icon */
+    --navbar-bg: #344876;          /* Navbar Background */
+    --toggle-icon-fill: #ffffff;   /* Toggle Icon */
     --container-bg: #3c4a6b;
 }
 /*BASE STYLING */
@@ -29,7 +29,8 @@ html {
 body {
     background-color: var(--base-variant);
     color: var(--text-color);
-    font-size: 25px;
+    /* Set a more reasonable base font size for desktop */
+    font-size: 20px; 
     transition: background-color 0.4s, color 0.4s;
     padding-top: 5px;
 }
@@ -63,6 +64,12 @@ body.darkmode header .navbar {
 
 .nav-link:hover {
     opacity: 0.8;
+}
+
+/* Reduce default vertical padding for nav links */
+.nav-link {
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
 }
 
 /*THEME SWITCH BUTTON */
@@ -302,6 +309,50 @@ body.darkmode .tooltip-inner {
     .profile-card {
         max-width: 80%;
         margin-top: 2rem;
+    }
+}
+
+/* ========================================================== */
+/* MOBILE OPTIMIZATIONS (for screens up to 768px wide) */
+/* This is the key section to fix the oversized navbar on phones */
+/* ========================================================== */
+@media (max-width: 768px) {
+    /* Reduce the base font size for all text on mobile to shrink the overall UI */
+    body {
+        font-size: 16px; 
+    }
+
+    /* Reduce the padding on the vertical menu items to make the list shorter */
+    .nav-link { 
+        padding-top: 0.4rem !important; 
+        padding-bottom: 0.4rem !important;
+        font-size: 16px;
+    }
+    
+    /* Make button padding smaller on small screens */
+    .btn--download {
+        padding: 0.3rem 0.6rem;
+        font-size: 14px;
+    }
+    
+    /* Tighter padding on main content containers */
+    section .container {
+        padding: 2rem 1.5rem; 
+        margin: 1.5rem auto; 
+    }
+
+    /* Responsive adjustment for the large 'typed' text (if applicable) */
+    #typed {
+        font-size: 40px;
+    }
+
+    .cv-title {
+        font-size: 35px; /* Smaller title on mobile */
+    }
+
+    .profile-card {
+        max-width: 90%; /* Allow the card to take up more width */
+        margin-top: 1.5rem;
     }
 }
 @media screen and (max-width:600px) {
