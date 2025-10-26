@@ -210,7 +210,7 @@ body.darkmode #typed {
     transition: all 0.3s ease;
 }
 
-/* Hover effect for light mode */
+/* Hover effect light mode */
 .btn--download:hover {
     background-color: var(--container-bg); /*light-blue hover shade */
     color: var(--text-color);
@@ -300,7 +300,7 @@ body.darkmode .tooltip-inner {
     color: #fff;
 }
 
-/* Center content properly on smaller screens */
+/* smaller screens */
 @media (max-width: 992px) {
 
     .cv-title {
@@ -312,46 +312,35 @@ body.darkmode .tooltip-inner {
     }
 }
 
-/* ========================================================== */
-/* MOBILE OPTIMIZATIONS (for screens up to 768px wide) */
-/* This is the key section to fix the oversized navbar on phones */
-/* ========================================================== */
 @media (max-width: 768px) {
-    /* Reduce the base font size for all text on mobile to shrink the overall UI */
     body {
         font-size: 16px; 
     }
-
-    /* Reduce the padding on the vertical menu items to make the list shorter */
     .nav-link { 
-        padding-top: 0.4rem !important; 
-        padding-bottom: 0.4rem !important;
+        padding-top: 0.2rem !important; 
+        padding-bottom: 0.2rem !important;
         font-size: 16px;
     }
-    
-    /* Make button padding smaller on small screens */
     .btn--download {
         padding: 0.3rem 0.6rem;
         font-size: 14px;
     }
     
-    /* Tighter padding on main content containers */
     section .container {
         padding: 2rem 1.5rem; 
         margin: 1.5rem auto; 
     }
 
-    /* Responsive adjustment for the large 'typed' text (if applicable) */
     #typed {
         font-size: 40px;
     }
 
     .cv-title {
-        font-size: 35px; /* Smaller title on mobile */
+        font-size: 35px; 
     }
 
     .profile-card {
-        max-width: 90%; /* Allow the card to take up more width */
+        max-width: 90%; 
         margin-top: 1.5rem;
     }
 }
@@ -487,3 +476,4 @@ body.darkmode #contact .contact-link {
 body.darkmode #contact .contact-link:hover {
     color: black;
 }
+
